@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<title>A multiplayer game built using HTML5 canvas and WebSockets</title>
+		<meta charset="utf-8">
+		
+		<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+		<link rel="stylesheet" href="typeGame.css">
+
+<script type="text/JavaScript">
+function killCopy(e){
+return false
+}
+function reEnable(){
+return true
+}
+document.onselectstart=new Function ("return false")
+if (window.sidebar){
+document.onmousedown=killCopy
+document.onclick=reEnable
+}
+</script>
+	</head>
+	
+	<body onload="show();" >
+			
+			<div id="chatContainer">
+			<div id="scores">
+			
+		</div>
+<input type='text' id='chatInput' placeholder='Chat Here' maxlength="25" style="display:none;">
+		</div>
+		<div id="players">
+		
+		</div>
+		
+		<div id="timer"><span id="time"></span></div>
+	
+	
+		<div id="inputs">
+		<input type='text' id='nameInput' placeholder='Enter Name' maxlength="15">
+		<input type='text' id='submitInput' placeholder='Submit Word' style="display:none;" maxlength="20">
+		<input type='text' id='gameInput' placeholder='Type Here' style="display:none;">
+<span id="swear"><br>Swearing is bad :(</span>
+		</div>
+		
+		<div id="wordContainer">
+		<h1 id="Word">Word</h1>
+		</div>
+		
+		<div id="texts">
+		<h1 id="Title">TypeFast</h1>
+<h1 id="Start" onclick="startGame()">Start Game</h1>
+<h1 id="Submit" onclick="submitWord()">Submit Word</h1>
+<h1 id="highScore">High Score</h1>
+		</div>
+		
+		<div id="instructionsContainer">
+		<p id="instructions">Type "Menu" at any time to go back to menu <br> *Everything is case sensitive*</p>
+		</div>
+		
+	<!-- <input type="button" value="start" onclick="start();">
+	<input type="button" value="stop" onclick="stop();">
+	<input type="button" value="reset" onclick="reset()">	
+<button type="button" onclick="startGame()">Click Me!</button> -->
+		<script src="typegame.js"></script>
+		<script src="stopwatch.js"></script>
+	</body>
+</html>

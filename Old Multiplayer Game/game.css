@@ -1,0 +1,25 @@
+body {
+	overflow: hidden;
+}
+
+canvas {
+	display: none;
+	border: solid;
+}
+
+#messagesDiv
+{
+display:inline-block;
+float: left;
+border : solid;
+overflow-y: scroll;
+overflow-x: hidden;
+height: 70px;
+width:450px;
+}
+
+#messageInput
+{
+display:inline-block;
+float: left;
+}

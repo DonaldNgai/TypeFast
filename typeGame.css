@@ -1,0 +1,200 @@
+@font-face {
+	font-family: 'digital';
+	src: url('Fonts/DS-DIGI.TTF');
+	
+}
+
+@font-face {
+	font-family: 'texts';
+	src: url('Fonts/Roboto-Light.ttf');
+	
+}
+
+body {
+	overflow: auto;
+	background: url('wood_pattern.png') repeat;
+}
+
+canvas {
+	display: none;
+	border: solid;
+}
+
+span
+{
+display:none;
+}
+
+#messagesDiv
+{
+display:inline-block;
+float: left;
+border : solid;
+overflow-y: scroll;
+overflow-x: hidden;
+height: 70px;
+width:450px;
+}
+
+#messageInput
+{
+display:inline-block;
+float: left;
+}
+
+#chatInput
+{
+width:96%;
+bottom:-50px;
+left:0;
+position:absolute;
+}
+
+#Title, #Start, #Submit, #Word, #highScore
+{
+
+   color: white;
+  text-shadow: 1px 1px 0 #6D6D6D, -1px -1px 0 #FFFDFD, 1px -1px 0 #CACACA, -1px 1px 0 #D3D3D3, 1px 1px 0 #030303;
+display: initial;
+
+}
+
+#Start, #Submit, #Word, #highScore
+{
+display:none;
+}
+
+#highScore
+{
+margin-top:220px;
+}
+
+#Submit{
+	text-align: center;
+}
+
+input
+{
+cursor:text;
+font-family: texts, arial, verdana;
+	font-size: 20px;
+border: 5px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+background: rgba(255,255,255,0.8);
+}
+
+#inputs, #texts, #wordContainer, #instructionsContainer
+{
+text-align: center;
+}
+
+#texts
+{
+z-index:0;
+font-family: texts, arial, verdana;
+font-size: 18px;
+position:absolute;
+top:250px;
+width:99%;
+
+}
+
+#wordContainer, #instructionsContainer
+{
+position:absolute;
+font-family: texts, arial, verdana;
+font-size: 18px;
+top:165px;
+width:99%;
+}
+
+#instructionsContainer
+{
+top:580px;
+opacity:0.5;
+}
+
+#inputs
+{
+z-index:1;
+position:absolute;
+top:330px;
+width:99%;
+}
+
+#timer{
+position:absolute;
+	top:240px;
+	width:99%;
+	text-align: center;
+display: none;
+}
+
+#time {
+	padding-left: 15px;
+	background: linear-gradient(top, #222, #444);
+	overflow: hidden;
+	display: inline-block;
+	border: 7px solid #efefef;
+	width:270px;
+	font-family: digital, arial, verdana;
+	font-size: 50px;
+	text-align: left;
+	color: #fff;
+}
+
+#players{
+position:relative;
+z-index:3;
+font-family: texts, arial, verdana;
+font-size: 18px;
+width: 23.5%;
+height: 450px;
+margin: 8%;
+display: inline-block;
+background:rgba(255,255,255,0.3);
+color:Black;
+overflow:auto;
+opacity:0.8;
+
+}
+
+#chatInput
+{
+position: absolute;
+width: 97%;
+font-family: texts, arial, verdana;
+z-index:3;
+bottom:0;
+right:0;
+}
+
+#scores{
+height:410px;
+overflow:auto;
+}
+
+
+#chatContainer {
+position:relative;
+z-index:3;
+font-family: texts, arial, verdana;
+font-size: 18px;
+width: 23.5%;
+height: 450px;
+margin: 8%;
+display: inline-block;
+background:rgba(255,255,255,0.3);
+color:Black;
+opacity:0.8;
+float:right;
+}
+

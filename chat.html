@@ -1,0 +1,51 @@
+<!doctype html>
+
+  <head>
+    <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+    <link rel='stylesheet' type='text/css' href='../css/example.css'>
+  </head>
+  <body>
+    <div id='messagesDiv' style="border: solid; overflow-x:scroll; overflow-y: hidden; height:600px;"></div>
+    <input type='text' id='nameInput' placeholder='Name'>
+    <input type='text' id='messageInput' placeholder='Message' style="width:900px;">
+<div id='sound'></div>
+    <script>
+      var myDataRef = new Firebase('https://chatcontainer.firebaseio.com/');
+var currentdate;
+var datetime;
+
+      $('#messageInput').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var name = $('#nameInput').val();
+          var text = $('#messageInput').val();
+		currentdate  = new Date();
+		datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + "  "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() ;
+          myDataRef.push({name: name, text: text , date: datetime});
+          $('#messageInput').val('');
+        }
+      });
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+		playSound();
+		document.title = "Donald Ngai - Message Recieved!";
+        displayChatMessage(message.name, message.text, message.date);
+	setTimeout(function() {	
+		document.title = "Donald Ngai";
+		},8000);
+      });
+
+      function displayChatMessage(name, text, date) {
+        $('<div/>').text(text).prepend($('<em/>').text(name+ ' ' + date + ' : ')).appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+
+	function playSound(){   
+	  document.getElementById("sound").innerHTML="<embed src='Facebook Pop.mp3' hidden=true autostart=true loop=false>";
+	}
+    </script>
+  </body>
